@@ -8,7 +8,7 @@ data_subject=c()
 data_complaint=c()
 
 
-for(i in 2:3){
+for(i in 2:50){    #will go till 50th page
   
   
 link <- paste0("https://www.consumercomplaints.in/icici-bank-b100197/page/",i)
