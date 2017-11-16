@@ -8,15 +8,15 @@ data_subject=c()
 data_complaint=c()
 
 
-for(i in 2:50){    #will go till 50th page
-  
-  
+for(i in 2:50){    #will go till 50-th page
+
+
 link <- paste0("https://www.consumercomplaints.in/icici-bank-b100197/page/",i)
 consumer <- read_html(link)
 
 
 
-##------------Used SelectorGadget as the CSS Selector-----------## 
+##------------Used SelectorGadget as the CSS Selector-----------##
 
 nodes_subject=html_nodes(consumer,".complaint a")
 nodes_complaint=html_nodes(consumer,".compl-text div")
@@ -36,9 +36,9 @@ d=data.frame("subject"=data_subject,"complaint"=data_complaint)
 }
 ###----------------making a dataframe------------------##
 
-d$subject<- gsub("\r?\n|\r", " ",d$subject) 
+d$subject<- gsub("\r?\n|\r", " ",d$subject)
 
-d$complaint<- gsub("\r?\n|\r", " ",d$complaint) 
+d$complaint<- gsub("\r?\n|\r", " ",d$complaint)
 
 ###-----------writing into a csv file-------------------------##
 
